@@ -7,14 +7,12 @@ import { products } from '../products';
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css']
 })
-export class ProductListComponent {
+export class BookListComponent {
   products = products;
-
   share() {
     window.alert('The product has been shared!');
   }
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.
