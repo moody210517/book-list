@@ -7,10 +7,31 @@ Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 -->
 
-<div *ngFor="let product of products">
 
-  <h3>
-      {{ product.name }}
-  </h3>
 
+<div class="list-container">
+    <dx-list 
+        #list
+        [dataSource]="products"
+        [height]="400"
+        [searchEnabled]="true"
+        searchExpr="Name"
+        searchMode="contains">
+            <div *dxTemplate="let data of 'item'">
+                <div>{{data.name}}</div>
+            </div>
+    </dx-list>
 </div>
+<div class="options">
+    <div class="caption">Options</div>
+    <div class="option">
+        <span>Search mode</span>
+        <dx-select-box
+            #searchMode
+            [items]="['contains', 'startsWith']"
+            [(value)]="list.searchMode">
+        </dx-select-box>
+    </div>
+</div>
+
+

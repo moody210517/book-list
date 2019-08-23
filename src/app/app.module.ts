@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { BookListComponent } from './book-list/book-list.component';
 
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { DxSelectBoxModule, DxListModule, DxTemplateModule } from 'devextreme-angular';
+
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: BookListComponent },
-    ])
+    ]),
+    DxSelectBoxModule,
+    DxListModule,
+    DxTemplateModule
   ],
   declarations: [
     AppComponent,
