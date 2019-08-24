@@ -7,18 +7,25 @@ Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 -->
 
-
-
 <div class="list-container">
     <dx-list 
         #list
         [dataSource]="products"
         [height]="400"
         [searchEnabled]="true"
-        searchExpr="Name"
+        searchExpr="name"
         searchMode="contains">
+        
             <div *dxTemplate="let data of 'item'">
-                <div>{{data.name}}</div>
+                <div>
+                  <span style="color:blue;">{{data.name}} </span>
+                  <br>
+                  Author: {{data.author}}
+                  <br>
+                  Publisher: {{data.publisher}}
+                  <br>
+                  Pub. Date {{data.publish_date}}
+                </div>
             </div>
     </dx-list>
 </div>
